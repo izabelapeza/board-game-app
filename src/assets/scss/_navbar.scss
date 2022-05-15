@@ -1,0 +1,100 @@
+.sticky-navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.navbar {
+  background-color: rgba($primary-color, 0.9);
+  min-height: 60px;
+
+  @include media-lg {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(180deg, rgba($primary-color, 1), rgba($primary-color, .85), rgba($primary-color, 0));
+    min-height: 150px;
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  padding: 40px 6vw;
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    @include heading-second;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+
+    @include media-lg {
+      font-size: 32px;
+    }
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    padding: 10px 12px;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: $accent-color-purple;
+    }
+  }
+
+  .router-link-active {
+    background-color: $accent-color-turquoise;
+  }
+
+  &__logo.router-link-active {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  ul li {
+    display: none;
+    margin-top: 32px;
+  }
+
+  &__burger {
+    text-align: right;
+    font-size: 26px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: $accent-color-turquoise;
+      transform: scale(1.1);
+    }
+  }
+
+  @include media-lg {
+    flex-direction: row;
+    line-height: 40px;
+
+    ul li {
+      display: inline-block !important;
+      margin: 0 4px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-top: 0px;
+    }
+    &__burger {
+      display: none;
+    }
+  }
+
+  .active-link {
+    display: block;
+    text-align: center;
+  }
+}

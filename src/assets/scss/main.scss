@@ -1,0 +1,30 @@
+// import scss
+@import "./config";
+@import "./navbar";
+@import "./home";
+@import "./games";
+@import "./footer";
+
+body {
+  font-family: $lato-font;
+}
+
+// custom scrollbar
+html {
+  scrollbar-width: normal;
+  scrollbar-color: $secondary-color $primary-color;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 14px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba($secondary-color, 0.75);
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}

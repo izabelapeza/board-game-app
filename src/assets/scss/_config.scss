@@ -1,0 +1,39 @@
+$primary-color: #121212;
+$secondary-color: #313131;
+$text-color: #ececec;
+
+$accent-color-purple: #bb86fc;
+$accent-color-blue: #3700b3;
+$accent-color-turquoise: #01ac9b;
+$error-color: #cf6679;
+
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+// import fonts
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+$lato-font: "Lato";
+$fredoka-font: 'Fredoka One', cursive;
+
+// font styles
+@mixin heading-first {
+  text-align: center;
+  margin-bottom: 100px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 8px;
+}
+
+@mixin heading-second {
+  font-family: $fredoka-font;
+}
