@@ -62,32 +62,37 @@ export const useGamesStore = defineStore({
     ],
   }),
   getters: {
-    randomGame: (state) => {
-      let randomGames = [];
-      let randomItem;
-      while (randomGames.length < 3) {
-        randomItem =
-          state.games[Math.floor(Math.random() * state.games.length)];
-        if (!randomGames.includes(randomItem)) {
-          randomGames.push(randomItem);
+    randomGames: (state) => {
+      return (num) => {
+        let randomGames = [];
+        let randomItem;
+        while (randomGames.length < num) {
+          randomItem =
+            state.games[Math.floor(Math.random() * state.games.length)];
+          if (!randomGames.includes(randomItem)) {
+            randomGames.push(randomItem);
+          }
         }
-      }
-      return randomGames;
+        return randomGames;
+      };
+    },
+    allCategory: (state) => {
+      let setCategory = new Set();
+      setCategory.add("wszystkie");
+      state.games.forEach((game) => {
+        setCategory.add(game.category);
+      });
+      return setCategory;
+    },
+    sortByCategory: (state) => {
+      return (category) => {
+        if (category === "wszystkie") {
+          return state.games;
+        }
+        return state.games.filter((game) => {
+          return game.category === category;
+        });
+      };
     },
   },
 });
-
-// export const useCounterStore = defineStore({
-//   id: "counter",
-//   state: () => ({
-//     counter: 0,
-//   }),
-//   getters: {
-//     doubleCount: (state) => state.counter * 2,
-//   },
-//   actions: {
-//     increment() {
-//       this.counter++;
-//     },
-//   },
-// });

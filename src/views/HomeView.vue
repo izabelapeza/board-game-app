@@ -10,9 +10,9 @@
     </div>
     <div class="home__games">
       <h2 class="home__games__heading">Wybrane tytuły</h2>
-      <div class="games__grid">
+      <div class="games games__grid">
         <GameCard
-          v-for="game in games.randomGame"
+          v-for="game in games.randomGames(3)"
           :key="game.id"
           :image="game.image"
           :title="game.title"

@@ -40,7 +40,7 @@
 */
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-import { onClickOutside } from '@vueuse/core'
+import { onClickOutside } from "@vueuse/core";
 
 /*
   show links
@@ -53,6 +53,6 @@ const showLinks = () => {
 /*
   click outside to close
 */
-const navbarRef = ref(null)
-onClickOutside(navbarRef, () => exposedLink.value = false)
+const navbarRef = ref(null);
+onClickOutside(navbarRef, () => (exposedLink.value = false));
 </script>

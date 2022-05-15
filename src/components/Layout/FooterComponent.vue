@@ -9,13 +9,25 @@
       </p>
     </div>
     <div class="footer__right">
-      <a href="https://www.youtube.com/" target="_blank" class="footer__social-media">
+      <a
+        href="https://www.youtube.com/"
+        target="_blank"
+        class="footer__social-media"
+      >
         <font-awesome-icon :icon="['fab', 'youtube']" />
       </a>
-      <a href="https://www.instagram.com/" target="_blank" class="footer__social-media">
+      <a
+        href="https://www.instagram.com/"
+        target="_blank"
+        class="footer__social-media"
+      >
         <font-awesome-icon :icon="['fab', 'instagram']" />
       </a>
-      <a href="https://www.facebook.com/" target="_blank" class="footer__social-media">
+      <a
+        href="https://www.facebook.com/"
+        target="_blank"
+        class="footer__social-media"
+      >
         <font-awesome-icon :icon="['fab', 'facebook-f']" />
       </a>
     </div>
