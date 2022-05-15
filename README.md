@@ -1,4 +1,4 @@
-# vue-board-game-site
+# board-game-app
 This Vue 3 app bases entirely on the Composition API and uses Pinia for State Management. I also used a SCSS and router to create this site.
 
 ## Customize configuration
