@@ -5,17 +5,14 @@
         v-for="category in games.allCategory"
         :key="category"
         @click="changeCategory(category)"
+        :style="`background-color: ${
+          useGetColor(category === activeCategory ? category : '')[0]
+        }; color: ${
+          useGetColor(category === activeCategory ? category : '')[1]
+        }`"
+        class="game-category game-category__main"
       >
-        <span
-          :style="`background-color: ${
-            useGetColor(category === activeCategory ? category : '')[0]
-          }; color: ${
-            useGetColor(category === activeCategory ? category : '')[1]
-          }`"
-          class="game-category game-category__main"
-        >
-          {{ category }}
-        </span>
+        {{ category }}
       </span>
     </div>
     <div class="games__grid">
